@@ -9,5 +9,10 @@ import lombok.*;
 public class HomeResponse {
     private String name;
     private String email;
-    private String apartmentId;
+    private String logo;
+    private String profileImage;
+    private String banner;
+    private String rent;
+    private String apartmentName;
+    private String address;
 }
