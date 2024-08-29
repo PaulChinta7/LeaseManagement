@@ -10,6 +10,21 @@ services:
       - ./mongodb_data:/data/db
     networks:
       - app-network
+  
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/LeaseDB
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
